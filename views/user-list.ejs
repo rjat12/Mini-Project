@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory Data</title>
+
+  <style>
+    
+    table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  
+}
+tr:nth-child(even) {
+  background-color: rgba(150, 208, 212, 0.4);
+}
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 201, 212, 0.4);
+}
+th, td {
+  background-color:lightblue;
+  
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  
+}
+th {
+  text-align: left;
+}
+tr:hover {background-color:lightgrey;}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <table class="responsive-table">
+          <caption>INVENTORY DATABASE</caption>
+          <br><br>
+          <thead>
+            <tr>
+              <th scope="col">Product ID</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.id %></td>
+            <td><%=data.product %></td>
+            <td><%=data.quantity %></td>
+            <td><%=data.price %></td>
+            
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+          </tbody>
+        </table>
+    </div>
+</body>
+</html>

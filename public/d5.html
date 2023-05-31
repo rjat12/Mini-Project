@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - IMS admin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://www.deskera.com/blog/content/images/2021/06/InventoryManagement_Hero@3x.png" rel="icon">
+  <link href="https://www.deskera.com/blog/content/images/2021/06/InventoryManagement_Hero@3x.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/simple-datatables/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="dashboard.html" class="logo d-flex align-items-center">
+        <img src="https://www.deskera.com/blog/content/images/2021/06/InventoryManagement_Hero@3x.png" alt="">
+        <span class="d-none d-lg-block">IMS</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+       
+
+       
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Welcome Admin</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/dashboard">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li>
+        <a class="nav-link collapsed" href="/d1">
+          <i class="bi bi-menu-button-wide"></i><span>Add Product</span>
+        </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/d2">
+            <i class="bi bi-layout-text-window-reverse"></i><span>Delete Product</span>
+          </a>
+        </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>View Stock</span></a>
+       
+      </li><!-- End Forms Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/d4">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Add Stock Manager</span>
+        </a>
+      </li><!-- End Tables Nav -->
+      <li class="nav-item">
+        <a class="nav-link" href="/d5">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Remove Stock Manager</span>
+        </a>
+      </li><!-- End Tables Nav -->
+
+      
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>REMOVE STOCK MANAGERS</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <form onsubmit="return false;" id="form">
+            <br>
+            <label for="email">E-mail ID of Stock Manager : </label>
+            <input type="email" id="email">
+            <br><br>
+            <button type="submit">Remove Manager</button>
+        </form>
+            <div class="alert alert-danger" role="alert" id="error" style="display:none"></div>
+            <div class="alert alert-success" role="alert" id="success" style="display:none"></div>
+        </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>IMS</span></strong>. All Rights Reserved
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/chart.js/chart.umd.js"></script>
+  <script src="vendor/echarts/echarts.min.js"></script>
+  <script src="vendor/quill/quill.min.js"></script>
+  <script src="vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="vendor/tinymce/tinymce.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+  <script src="js/d5.js"></script>
+
+</body>
+
+</html>
